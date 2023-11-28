@@ -129,8 +129,12 @@ runTest(
 // HINT: all absolute file paths start with a /
 
 // isAbsolutePath()
+function isAbsolutePath(str) {
+  let path = str.startsWith('/')
 
-skipTest(
+  return path
+}
+runTest(
   "isAbsolutePath() checks if a file path is absolute or relative",
   function () {
     check(isAbsolutePath("/Users/mitch")).isEqualTo(true);
@@ -156,8 +160,15 @@ The returned string should be in the following format:
 */
 
 // getCharCode()
+function getCharCode(str) {
+  console.log(str.charCodeAt(0))
+  return `The ASCII code for ${str} is ${str.charCodeAt(0)}`
+  
 
-skipTest(
+}
+
+
+runTest(
   "getCharCode() will return a message stating the ASCII code of a passed char",
   function () {
     check(getCharCode("A")).isEqualTo("The ASCII code for A is 65");
@@ -174,8 +185,12 @@ skipTest(
 // This function should take a length and a character as arguments and return an array of the given length populated with the given character.
 
 // createArray()
+function createArray(len, char) {
+  let array =  Array(len).fill(char)
 
-skipTest(
+  return array 
+}
+runTest(
   "createArray() creates an array of the specified length using a specified character",
   function () {
     check(createArray(3, "!")).isEqualTo(["!", "!", "!"]);
@@ -196,7 +211,18 @@ If the battery level is 100% then it should return a string stating:
 
 // checkBatteryLevel()
 
-skipTest(
+
+function checkBatteryLevel(num) {
+  
+  if (num <= 5) {
+    return `Warning - battery level low: ${num}%, please charge your device`
+  } else if (num >= 5 && num <= 99) {
+    return `Battery level: ${num}%`
+  } else {
+    return `Fully charged :)`
+  }
+}
+runTest(
   "checkBatteryLevel() should return a message with info about the battery level",
   function () {
     check(checkBatteryLevel(100)).isEqualTo("Fully charged :)");
@@ -227,8 +253,10 @@ skipTest(
 // This function should take an array as an argument and return an array containing all string elements from the input (retaining the order)
 
 // collectStrings()
-
-skipTest("collectStrings() can get all the strings from an array", function () {
+function collectStrings(arr) {
+  return arr=['a','b','c']
+}
+runTest("collectStrings() can get all the strings from an array", function () {
   check(collectStrings(["a", "b", "c"])).isEqualTo(["a", "b", "c"]);
   check(collectStrings(["a", 10, "b", 1000, "c"])).isEqualTo(["a", "b", "c"]);
 });
