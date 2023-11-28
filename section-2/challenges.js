@@ -23,7 +23,10 @@ function multiply(a, b) {
 
 // This function should take a single argument and return its value rounded DOWN to the nearest integer.
 
-skipTest(
+function roundDown(number) {
+  return Math.floor(number)
+}
+runTest(
   "roundDown() returns the result of rounding down to the nearest integer",
   function () {
     check(roundDown(100.1)).isEqualTo(100);
@@ -31,9 +34,6 @@ skipTest(
     check(roundDown(121.999)).isEqualTo(121);
   }
 );
-function roundDown(a) {
-  return Math.round(a)
-}
 
 // Challenge 2
 
@@ -41,11 +41,14 @@ function roundDown(a) {
 
 // raiseToPower()
 
-skipTest("raiseToPower() raises given number to the given power", function () {
+runTest("raiseToPower() raises given number to the given power", function () {
   check(raiseToPower(10, 3)).isEqualTo(1000);
   check(raiseToPower(25, 2)).isEqualTo(625);
   check(raiseToPower(10, 0)).isEqualTo(1);
 });
+function raiseToPower(a,b) {
+  return Math.pow(a,b)
+}
 
 // Challenge 3
 
@@ -53,7 +56,7 @@ skipTest("raiseToPower() raises given number to the given power", function () {
 
 // isMultipleOf6()
 
-skipTest(
+runTest(
   "isMultipleOf6() should check if a number is divisible by 6",
   function () {
     check(isMultipleOf6(6)).isEqualTo(true);
