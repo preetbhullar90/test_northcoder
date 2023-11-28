@@ -10,7 +10,12 @@ runTest("multiply() can multiply 2 numbers together", function () {
   check(multiply(3, 5)).isEqualTo(15);
   check(multiply(17, 19)).isEqualTo(323);
   check(multiply(-180, 2)).isEqualTo(-360);
+  
 });
+
+function multiply(a, b) {
+  return a * b;
+}
 
 // Challenge 1
 
@@ -26,6 +31,9 @@ skipTest(
     check(roundDown(121.999)).isEqualTo(121);
   }
 );
+function roundDown(a) {
+  return Math.round(a)
+}
 
 // Challenge 2
 
