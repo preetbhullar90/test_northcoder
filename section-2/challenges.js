@@ -56,6 +56,12 @@ function raiseToPower(a,b) {
 
 // isMultipleOf6()
 
+function isMultipleOf6(num) {
+  return num % 6==0
+    
+  
+}
+
 runTest(
   "isMultipleOf6() should check if a number is divisible by 6",
   function () {
@@ -74,7 +80,13 @@ runTest(
 
 // capitaliseFirstLetter()
 
-skipTest(
+
+function capitaliseFirstLetter(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1)
+  
+}
+
+runTest(
   "capitaliseFirstLetter() capitalises the first letter in a string",
   function () {
     check(capitaliseFirstLetter("bang")).isEqualTo("Bang");
@@ -90,7 +102,14 @@ skipTest(
 
 // isInThe20thCentury()
 
-skipTest(
+
+function isInThe20thCentury(num) {
+  return num >= 1901 && num <= 2000
+    
+  
+}
+
+runTest(
   "isInThe20thCentury() checks if a number is within 1901 to 2000 (inclusive)",
   function () {
     check(isInThe20thCentury(1962)).isEqualTo(true);
